@@ -22,6 +22,7 @@ int hex_to_hash(const char *hex, ObjectID *id_out) {
     }
     return 0;
 }
+// Phase 1: Implementing directory sharding using first two hash characters
 // Phase 1 step: hashing logic added
 // Phase 1: Adding SHA-256 hashing to uniquely identify objects
 void compute_hash(const void *data, size_t len, ObjectID *id_out) {
