@@ -156,9 +156,9 @@ int head_update(const ObjectID *new_commit) {
 }
 
 // ─── TODO: Implemented ───────────────────────────────────────────────────────
-
+// Phase 4: Creating commit object with tree reference
 int commit_create(const char *message, ObjectID *commit_id_out) {
-    // 1. Build tree from index
+    
     ObjectID tree_id;
     if (tree_from_index(&tree_id) != 0) return -1;
 
