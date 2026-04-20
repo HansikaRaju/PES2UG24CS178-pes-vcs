@@ -171,6 +171,7 @@ int commit_create(const char *message, ObjectID *commit_id_out) {
     strncpy(commit.message, message, sizeof(commit.message) - 1);
 
     // 3. Try to read parent (may not exist for first commit)
+// Phase 4: Linking commit to parent commit
     ObjectID parent_id;
     if (head_read(&parent_id) == 0) {
         commit.parent = parent_id;
