@@ -54,6 +54,7 @@ int tree_parse(const void *data, size_t len, Tree *tree_out) {
     return 0;
 }
 
+// Phase 2: Recursively building subtree structures
 static int compare_tree_entries(const void *a, const void *b) {
     return strcmp(((const TreeEntry *)a)->name, ((const TreeEntry *)b)->name);
 }
