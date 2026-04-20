@@ -161,6 +161,7 @@ int index_save(const Index *index) {
     return rename(tmp_path, INDEX_FILE);
 }
 
+// Phase 3: Adding files to index with metadata tracking
 int index_add(Index *index, const char *path) {
     FILE *f = fopen(path, "rb");
     if (!f) {
