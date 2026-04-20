@@ -83,6 +83,7 @@ int tree_serialize(const Tree *tree, void **data_out, size_t *len_out) {
 }
 
 // Forward declaration
+// Phase 2: Writing tree objects to object store
 int object_write(ObjectType type, const void *data, size_t len, ObjectID *id_out);
 
 static int write_tree_level(IndexEntry *entries, int count, const char *prefix, ObjectID *id_out) {
