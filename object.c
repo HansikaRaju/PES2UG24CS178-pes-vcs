@@ -6,8 +6,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <openssl/sha.h>
-// Phase 1: object_read implementation
-// Phase 1 step: hashing logic added
+
 void hash_to_hex(const ObjectID *id, char *hex_out) {
     for (int i = 0; i < HASH_SIZE; i++)
         sprintf(hex_out + i * 2, "%02x", id->hash[i]);
@@ -23,6 +22,7 @@ int hex_to_hash(const char *hex, ObjectID *id_out) {
     }
     return 0;
 }
+// Phase 1 step: hashing logic added
 
 void compute_hash(const void *data, size_t len, ObjectID *id_out) {
     SHA256_CTX ctx;
@@ -42,7 +42,8 @@ int object_exists(const ObjectID *id) {
     object_path(id, path, sizeof(path));
     return access(path, F_OK) == 0;
 }
-
+// Phase 1: object_read implementation
+// Phase 1: Implementing object_write to store objects in content-addressable storage
 int object_write(ObjectType type, const void *data, size_t len, ObjectID *id_out) {
     const char *type_str = (type == OBJ_BLOB) ? "blob" :
                            (type == OBJ_TREE) ? "tree" : "commit";
