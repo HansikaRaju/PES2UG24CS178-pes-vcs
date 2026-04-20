@@ -161,7 +161,7 @@ int commit_create(const char *message, ObjectID *commit_id_out) {
     
     ObjectID tree_id;
     if (tree_from_index(&tree_id) != 0) return -1;
-
+// Phase 4: Adding author and timestamp metadata
     // 2. Fill commit struct
     Commit commit;
     memset(&commit, 0, sizeof(commit));
