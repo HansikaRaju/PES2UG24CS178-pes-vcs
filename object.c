@@ -6,7 +6,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <openssl/sha.h>
-
+// Phase 1 step: hashing logic added
 void hash_to_hex(const ObjectID *id, char *hex_out) {
     for (int i = 0; i < HASH_SIZE; i++)
         sprintf(hex_out + i * 2, "%02x", id->hash[i]);
