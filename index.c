@@ -131,6 +131,7 @@ int index_load(Index *index) {
     return 0;
 }
 
+// Phase 3: Saving index entries in sorted order
 int index_save(const Index *index) {
     Index *sorted = malloc(sizeof(Index));
     if (!sorted) return -1;
