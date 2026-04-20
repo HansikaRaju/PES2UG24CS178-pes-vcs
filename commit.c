@@ -191,6 +191,7 @@ int commit_create(const char *message, ObjectID *commit_id_out) {
     }
     free(commit_data);
 
+// Phase 4: Updating HEAD reference after commit
     // 5. Update HEAD to point to new commit
     return head_update(commit_id_out);
 }
