@@ -120,6 +120,7 @@ int index_load(Index *index) {
         if (sscanf(line, "%o %64s %llu %llu %511s",
                    &mode, hex, &mtime, &size, path) != 5) continue;
 
+// Phase 3: Tracking file modification time and size
         e->mode = mode;
         e->mtime_sec = mtime;
         e->size = (uint32_t)size;
