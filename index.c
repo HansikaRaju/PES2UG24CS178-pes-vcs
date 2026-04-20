@@ -188,7 +188,7 @@ int index_add(Index *index, const char *path) {
 
     struct stat st;
     if (lstat(path, &st) != 0) return -1;
-
+// Phase 3: Ensuring atomic updates to index file
     IndexEntry *existing = index_find(index, path);
     if (!existing) {
         if (index->count >= MAX_INDEX_ENTRIES) return -1;
