@@ -180,6 +180,7 @@ int commit_create(const char *message, ObjectID *commit_id_out) {
         commit.has_parent = 0;
     }
 
+// Phase 4: Writing commit object to object store
     // 4. Serialize and write commit object
     void *commit_data;
     size_t commit_len;
