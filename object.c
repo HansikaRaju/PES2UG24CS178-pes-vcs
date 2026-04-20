@@ -94,7 +94,7 @@ int object_write(ObjectType type, const void *data, size_t len, ObjectID *id_out
 
     return 0;
 }
-
+// Phase 1: Verifying object integrity during object_read using hash comparison
 int object_read(const ObjectID *id, ObjectType *type_out, void **data_out, size_t *len_out) {
     char path[512];
     object_path(id, path, sizeof(path));
