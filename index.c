@@ -101,6 +101,7 @@ static int compare_entries(const void *a, const void *b) {
     return strcmp(((const IndexEntry *)a)->path, ((const IndexEntry *)b)->path);
 }
 
+// Phase 3: Loading index file into memory structure
 int index_load(Index *index) {
     index->count = 0;
     FILE *f = fopen(INDEX_FILE, "r");
